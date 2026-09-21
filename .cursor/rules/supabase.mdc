@@ -1,0 +1,25 @@
+---
+description: Supabase RLS, storage, and Postgres migration rules for Progress
+globs: "**/{supabase,lib,services,features}/**/*.{ts,tsx,sql}"
+alwaysApply: false
+---
+
+# Supabase Rules
+
+All user-owned data must be protected with Row Level Security. Never trust a client-provided `user_id`. Use `auth.uid()` in RLS policies.
+
+Progress photos must use a private storage bucket. Never expose the Supabase service-role key to the mobile application. Do not bypass RLS from client code.
+
+Store storage paths, not permanent signed URLs. Generate signed URLs when private images need to be displayed.
+
+Any child table belonging to a user's workout must verify ownership through its parent relationship.
+
+Client env only: `EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_ANON_KEY`. The service-role key must never ship in the app.
+
+# Database Rules
+
+Migrations are the source of truth. Do not manually modify production schema without a migration. Every schema change must have a migration.
+
+Use foreign keys. Use `ON DELETE CASCADE` where appropriate for user-owned child data. Add indexes for common user-scoped queries.
+
+Use timestamps consistently. Prefer `timestamptz`. Do not store derived values unless there is a clear performance requirement.

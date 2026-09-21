@@ -1,0 +1,26 @@
+---
+description: Secrets, RLS, private photos, logging, and input validation for Progress
+alwaysApply: true
+---
+
+# Security Rules
+
+Treat progress photos as sensitive private user data. Workout data and photos are private by default.
+
+Never:
+
+- log passwords
+- log authentication tokens
+- log private photo URLs
+- expose database errors directly to users
+- put secrets in source code
+- disable RLS
+- create public access to progress photos
+- hardcode Supabase service-role keys
+- put secret API keys in the mobile application
+- trust client-provided user IDs
+- store authentication tokens manually unless required by the SDK
+
+Validate all user input. Use Zod for client-side validation where appropriate. Server/database constraints remain authoritative.
+
+`.env` must not be committed. `.env.example` may list `EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_ANON_KEY` only.

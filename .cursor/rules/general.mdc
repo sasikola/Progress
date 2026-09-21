@@ -1,0 +1,26 @@
+---
+description: Core stack, TypeScript, architecture, and coding workflow for Progress
+alwaysApply: true
+---
+
+# General Development Rules
+
+You are working on the Progress fitness application.
+
+Stack: Expo, React Native, TypeScript, Expo Router, Supabase, PostgreSQL, TanStack Query, React Hook Form, Zod.
+
+Always inspect the existing project before changing code. Do not rewrite unrelated files. Do not regenerate the entire project. Prefer existing components and utilities. Do not introduce dependencies without explaining why they are required.
+
+Use strict TypeScript. Do not use `any` unless absolutely necessary. Keep components focused. Separate UI, business logic, and data access.
+
+Naming: components `PascalCase`, hooks `useSomething`, functions `camelCase`, constants `UPPER_SNAKE_CASE`. Prefer kebab-case or Expo file conventions. Do not mix naming styles randomly.
+
+Components should not contain raw Supabase queries when practical. Prefer `feature → hook → service → Supabase`. Keep calculations (volume, duration, PRs, consistency) in `features/*/utils` or `lib/`.
+
+MVP PR = highest completed non-warmup weight (weight-based, not 1RM). Volume = `weight × reps` for completed non-warmup sets. Consistency = days with a completed workout / days in the selected period — not a health score.
+
+Never hardcode secrets. Never use the Supabase service-role key in client code. Never disable RLS to make a feature work. Progress photos must remain private.
+
+For significant tasks: inspect relevant files, identify existing components/data access/dependencies, explain planned changes, and wait for approval when the change is large or architectural.
+
+After completing a task, report: changes made, files changed, tests, commands to run, potential issues, and assumptions.

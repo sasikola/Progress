@@ -1,0 +1,28 @@
+---
+description: MVP product scope — what Progress must and must not include
+alwaysApply: true
+---
+
+# MVP Scope Rules
+
+Progress answers one question: "Am I actually making progress?" The MVP is intentionally small. Do not add features simply because competing fitness apps have them.
+
+In scope: account + onboarding, start/log/complete workouts, exercise library, history, body weight and measurements, progress photos and comparison, personal records, meaningful progress stats.
+
+Do not implement:
+
+- AI coach, AI body-fat estimation, or AI physique analysis
+- nutrition, calorie tracking, or meal plans
+- supplement marketplace
+- social feed, followers, likes/comments
+- trainer marketplace or live coaching
+- gym management or gym memberships
+- subscriptions or payments
+- Apple Watch app or wearable integrations
+- Android-specific optimization
+- chat, public profiles, community, or challenges
+- workout marketplace
+- push notification campaigns
+- advanced recommendation engine
+
+If a requested feature is outside MVP scope, explain that it belongs in the backlog rather than silently implementing it.

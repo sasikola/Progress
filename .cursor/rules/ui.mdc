@@ -1,0 +1,19 @@
+---
+description: Mobile UI, design tokens, loading/empty/error states for Progress
+globs: "**/*.{tsx,jsx}"
+alwaysApply: false
+---
+
+# UI Rules
+
+Use the project's centralized design tokens. Do not introduce arbitrary colors. Do not introduce arbitrary spacing values unless necessary. Use reusable UI components.
+
+The UI should feel modern, calm, premium, fitness-focused, minimal, and data-oriented. Avoid an overly aggressive bodybuilding aesthetic.
+
+Interactive controls should have a minimum touch target of approximately 44px.
+
+Every async operation needs a loading state, success handling, and error handling. Every list needs an intentional empty state.
+
+Avoid deeply nested cards. Prioritize mobile usability. Do not create desktop layouts unless specifically requested.
+
+Keep business calculations out of UI components. Workout logging must stay fast with minimal interaction — the user should be able to start a workout within seconds.
